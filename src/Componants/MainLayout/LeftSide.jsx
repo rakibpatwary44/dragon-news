@@ -1,0 +1,18 @@
+import React, { Suspense } from "react";
+import Categories from "../Categories";
+
+const LeftSide = () => {
+  return (
+    <div>
+      <Suspense
+        fallback={
+          <span className="loading loading-spinner text-success"></span>
+        }
+      >
+        <Categories></Categories>
+      </Suspense>
+    </div>
+  );
+};
+
+export default LeftSide;
