@@ -1,8 +1,9 @@
 import { FaEye, FaRegBookmark, FaStar } from "react-icons/fa";
 import { IoMdShare } from "react-icons/io";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
-  const { title, author, image_url, details, rating, total_view, tags } = news;
+  const { title, author, image_url, details, rating, total_view, tags, id } = news;
 
   return (
     <div className="card bg-base-100 shadow-xl border">
@@ -44,7 +45,12 @@ const NewsCard = ({ news }) => {
           {details.length > 200 ? details.slice(0, 200) + "..." : details}
         </p>
 
-        <p className="text-primary cursor-pointer font-medium">Read More</p>
+        <Link
+          to={`/newsDetails/${id}`}
+          className="text-primary  cursor-pointer font-bold"
+        >
+          Read More
+        </Link>
 
         {/* Footer */}
         <div className="flex items-center justify-between mt-4">
